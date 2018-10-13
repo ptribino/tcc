@@ -20,14 +20,19 @@
                 <li><a href="{% url 'itens:index' %}">Itens/Looks</a></li>
                 <li><a href="{% url 'armario:armarionew' %}">Armário</a></li>
                 <li><a href="{% url 'core:contact' %}">Contato</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>
+                <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
+                {% else %}
                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>
     <div class="content">
     {% block content %}{% endblock %}
     <div class="footer">
-        SmartLook - Crie o seu Guarda-Roupa Cápsula e conheça o seu estilo! by Priscila Tribino
+        SmartLook - Crie o seu Guarda-Roupa Cápsula!! by Priscila Tribino
     </div>
 </div>
 <script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>

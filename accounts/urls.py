@@ -6,7 +6,8 @@ from . import views
 app_name = 'accounts'
 urlpatterns = [
     path('entrar/', auth_views.login, {'template_name': 'accounts/login.html'}, name='login'),
-    #path('sair/', views.logout, name='logout'),
+    path('sair/', auth_views.logout, {'next_page': 'core:home'}, name='logout'),
     path('cadastre-se/', views.register, name='register'),
+    path('dashboard/', views.dashboard, name='dashboard'),
 
 ]
