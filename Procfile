@@ -1,0 +1,1 @@
+web: gunicorn smartlookapp.smartlookapp.wsgi --log-file -

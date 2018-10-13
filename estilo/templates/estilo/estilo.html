@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1">
+                <div class="l-box">
+                    <h4 class="content-subhead">Questionário Estilo</h4>
+                    <h4>Vamos descobrir o seu estilo? </h4>
+                </div>
+            </div>
+        </div>
+   {% for itens in itens %}
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <a href="{{ itens.get_absolute_url }}">
+                    {% if itens.image %}
+                        <img src="{{ itens.image.url }}" alt="{{ itens.name }}" />
+                    {% else %}
+                        <img src="{% static 'img/logo.png' %}" alt="{{ itens.name }}" />
+                    {% endif %}
+                    </a>
+                </div>
+            </div>
+        <div class="pure-u-2-3">
+            <div class="1-box">
+                <h4 class="content-subhead"><a href="{{ itens.get_absolute_url }}" title="">{{ itens.name }}</a></h4>
+                {{ itens.cor|linebreaks }}
+            </div>
+        </div>
+        </div>
+    {% empty %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div clas="1-box">
+            <p>Não existe nenhum item(roupas, acessários...) cadastrados ainda. </p>
+        </div>
+    </div>
+    </div>
+{% endfor %}
+{% endblock %}
