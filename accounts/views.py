@@ -28,3 +28,8 @@ def register(request):
         'form': form
     }
     return render(request, template_name, context)
+
+@login_required
+def edit(request):
+    template_name = 'accounts/edit.html'
+    return render(request, template_name)

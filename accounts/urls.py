@@ -9,5 +9,5 @@ urlpatterns = [
     path('sair/', auth_views.logout, {'next_page': 'core:home'}, name='logout'),
     path('cadastre-se/', views.register, name='register'),
     path('dashboard/', views.dashboard, name='dashboard'),
-
+    path('editar/', views.edit, name='edit'),
 ]

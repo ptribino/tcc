@@ -39,13 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'watson_app',
+
 
     'core',
     'estilo',
     'itens',
     'armario',
     'accounts',
+    'watson_app',
 ]
 APIKEY = 'd44da73a-4abb-4cd0-9ab1-803488fdec1f'
 
