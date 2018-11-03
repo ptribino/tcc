@@ -2,7 +2,7 @@ from django import forms
 from django.core.mail import send_mail
 from django.conf import settings
 
-#from core.mail import send_mail_template
+#from django.core.mail import send_mail_templates
 
 class ContactItens(forms.Form):
 
