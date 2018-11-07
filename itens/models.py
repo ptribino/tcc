@@ -1,6 +1,6 @@
 from django.db import models
 
-# CATEGORIA_CHOICES=[
+#CATEGORIA_CHOICES=[
 #     ('acessorios', 'Acessórios'),
 #     ('bermudas', 'Bermudas'),
 #     ('blusas', 'Blusas'),
@@ -26,7 +26,7 @@ class Itens(models.Model):
     name = models.CharField('Nome:', max_length=100)
     slug = models.SlugField('Atalho:')
     cor = models.CharField('Cor:', max_length= 20, blank=True)
-    #categoria = models.CharField(max_length=20, choices=CATEGORIA_CHOICES, default='Acessórios')
+#    categoria = models.CharField(max_length=20, choices=CATEGORIA_CHOICES, default='Acessórios')
     categoria = models.CharField('Categoria',max_length=20, null=True,blank=False)
     image = models.ImageField(
         upload_to='', verbose_name='Imagem:', null=True, blank=True

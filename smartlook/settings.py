@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_tables2',
 
 
     'core',
@@ -143,8 +144,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # E-mails
-#EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
+#EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Nome <ptribino@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -159,5 +160,6 @@ CONTACT_EMAIL = 'ptribino@gmail.com'
 LOGIN_URL = 'accounts:login'
 LOGIN_REDIRECT_URL = 'core:home'
 LOGOUT_URL = 'accounts:logout'
+#AUTH_USER_MODEL = 'accounts.User'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

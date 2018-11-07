@@ -2,7 +2,8 @@ from django import forms
 from django.core.mail import send_mail
 from django.conf import settings
 
-#from django.core.mail import send_mail_templates
+
+#from core.mail import send_mail_template
 
 class ContactItens(forms.Form):
 
@@ -15,7 +16,7 @@ class ContactItens(forms.Form):
     def send_mail(self):
         subject = 'Contato sobre o Smartlook'
         context = {
-            'name': self.celaned_data['name'],
+            'name': self.cleaned_data['name'],
             'email': self.cleaned_data['email'],
             'message': self.cleaned_data['message'],
         }
@@ -23,5 +24,3 @@ class ContactItens(forms.Form):
         send_mail_template(
             subject, template_name, context, [settings.CONTACT_EMAIL]
         )
-
-

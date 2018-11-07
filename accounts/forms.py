@@ -20,6 +20,7 @@ class RegisterForm(UserCreationForm):
             user.save()
         return user
 
+
 class EditAccountForm(forms.ModelForm):
 
     def clean_email(self):
