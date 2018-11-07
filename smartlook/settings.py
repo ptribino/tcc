@@ -11,9 +11,12 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+#import django_heroku
 from decouple import config
-3from unipath import Path
+#from unipath import Path
 from dj_database_url import parse as dburl
+
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -164,3 +167,6 @@ LOGOUT_URL = 'accounts:logout'
 #AUTH_USER_MODEL = 'accounts.User'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Activate Django-Heroku.
+#django_heroku.settings(locals())
