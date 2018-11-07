@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 from .models import Armario
 #from .forms import ArmarioForm
+from django.views.generic import ListView
+from django_tables2 import RequestConfig
+from .tables import ArmarioTable
 
 
-def armarionew(request):
+def armarionew(request, ListView):
     armario = Armario.objects.all()
     template_name = 'armario/armario_form.html'
     context = {
@@ -26,3 +29,11 @@ def armarionew(request):
 #         context['armario'] = armario
 #         template_name = 'armario/armario_form.html'
 #     return render(request, template_name, context)
+
+def get_context_data(self,**kwargs):
+    context = super(armarionew, self).get_context_data(**kwargs)
+    context['nav_armario']= True
+    table = ArmarioTable(Armario.objects.filter(self.kwargs['name']).order_by('name'))
+    RequestConfig(self.request, paginate={'per_page':30}).configure(table)
+    context['table']=table
+    return context

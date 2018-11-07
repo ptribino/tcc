@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 
+{% load querystring from django_tables2 %}
+
+{% load title from django_tables2 %}
+
 {% load static %}
 
 {% block content %}
+
+{% if table.page %}
         <div class="pure-g-r content-ribbon">
+ { % end if % }
+
+            
             <div class="pure-u-1">
                 <div class="l-box">
                     <h4 class="content-subhead">Hora de cadastrar o seu guarda-roupa!!</h4>

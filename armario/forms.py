@@ -6,7 +6,7 @@ class ArmarioForm(ModelForm):
     class Meta:
         model = Armario
 
-    fields = ['name', 'descricao','created_at']#,'updated_at']
+    fields = ['name', 'descricao','created_at','updated_at']
 
 
 
