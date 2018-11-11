@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
-
+from django.contrib import messages
 from .forms import RegisterForm, EditAccountForm
 
 @login_required
@@ -39,6 +39,7 @@ def edit(request):
             form.save()
             form = EditAccountForm(instance=request.user)
             context['success'] = True
+            messages.success(request, 'Os seus dados foram alterados com sucesso!')
     else:
         form = EditAccountForm(instance=request.user)
     context['form'] = form
@@ -53,6 +54,7 @@ def edit_password(request):
         if form.is_valid():
             form.save()
             context['success'] = True
+            messages.success(request, 'Os seus dados foram alterados com sucesso!')
     else:
         form = PasswordChangeForm(user=request.user)
     context['form'] = form

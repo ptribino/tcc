@@ -8,5 +8,3 @@ urlpatterns = [
     re_path(r'^(?P<slug>[\w_-]+)/$', views.details, name='details'),
 
 ]
-
-

@@ -1,15 +1,18 @@
 from django.db import models
 
-#CATEGORIA_CHOICES=[
-#     ('acessorios', 'Acessórios'),
-#     ('bermudas', 'Bermudas'),
-#     ('blusas', 'Blusas'),
-#     ('calcados', 'Calçados'),
-#     ('casacos', 'Casacos'),
-#     ('praia', 'Praia'),
-#     ('saias', 'Saias'),
-#     ('vestidos', 'Vestidos'),
-# ]
+
+# Create your models here.
+class Categoria(models.Model):
+    name_categoria = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.name_categoria
+
+class Cor(models.Model):
+    cor_item = models.CharField(max_length=50, null=True)
+
+    def __str__(self):
+        return self.cor_item
 
 class ItenManager(models.Manager):
 
@@ -19,15 +22,12 @@ class ItenManager(models.Manager):
             models.Q(cor__icontains=query)
         )
 
-
-
 class Itens(models.Model):
 
     name = models.CharField('Nome:', max_length=100)
     slug = models.SlugField('Atalho:')
-    cor = models.CharField('Cor:', max_length= 20, blank=True)
-#    categoria = models.CharField(max_length=20, choices=CATEGORIA_CHOICES, default='Acessórios')
-    categoria = models.CharField('Categoria',max_length=20, null=True,blank=False)
+    categoria = models.ForeignKey('Categoria',on_delete=models.CASCADE)
+    cor = models.ForeignKey('Cor', on_delete=models.CASCADE)
     image = models.ImageField(
         upload_to='', verbose_name='Imagem:', null=True, blank=True
     )

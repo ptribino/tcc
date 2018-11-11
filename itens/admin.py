@@ -4,10 +4,8 @@ from .models import Itens
 
 class ItemAdmin(admin.ModelAdmin):
 
-    list_display = ['name', 'slug', 'cor', 'categoria','image']
-    search_fields = ['name', 'slug', 'cor']
+    list_display = ['name', 'slug','image','categoria', 'cor']
+    search_fields = ['name', 'slug']
     prepopulated_fields = {'slug': ('name',)}
 
-admin.site.register(Itens, ItemAdmin)
-
-
+admin.site.register(Itens,ItemAdmin)

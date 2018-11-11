@@ -11,9 +11,6 @@ def index(request):
     }
     return render(request, template_name, context)
 
-# para mostrar na Url o código do item
-#def details(request, pk):
-#  itens = get_object_or_404(Itens, pk=pk)
 
 def details(request, slug):
     itens = get_object_or_404(Itens, slug=slug)
@@ -29,4 +26,3 @@ def details(request, slug):
         context['itens'] = itens
         template_name = "itens/details.html"
     return render(request, template_name, context)
-
