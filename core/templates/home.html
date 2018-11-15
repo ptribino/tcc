@@ -8,12 +8,15 @@
                     <h1 class="splash-head">
                         SmartLook - Aprenda a criar o seu  Armário-Cápsula e conheça o seu estilo!
                     </h1>
-                    <h2 class="splash-subhead">
-                        O Smartlook juntamente com a Stella, nossa assistente virtual, vai lhe ajudar a criar o seu rapidinho!!
                     <p>
                         {% if user.is_authenticated %}
+                        <h1 class="splash-subhead">
+                            Oi, {{ user }}!! </h1>
+                        {% else %}
                         <a href="{% url 'accounts:register' %}" class="pure-button primary-button">Cadastre-se</a>
                         {% endif %}
+                      <h2 class="splash-subhead">
+                          O Smartlook juntamente com a Stella, nossa assistente virtual, vai lhe ajudar a criar o seu rapidinho!!</h2>
                     </p>
                 </div>
             </div>
