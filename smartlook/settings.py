@@ -151,17 +151,17 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # E-mails
-EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
-#EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
-DEFAULT_FROM_EMAIL = 'Nome <ptribino@gmail.com>'
-EMAIL_USE_TLS = True
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'ptribino@gmail.com'
-EMAIL_HOST_PASSWORD = 'tamehu1481'
-EMAIL_PORT= 587
-EMAIL_USE_TLS = True
-
-CONTACT_EMAIL = 'ptribino@gmail.com'
+# EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
+# #EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
+# DEFAULT_FROM_EMAIL = 'Nome <ptribino@gmail.com>'
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_HOST_USER = 'ptribino@gmail.com'
+# EMAIL_HOST_PASSWORD = 'tamehu1481'
+# EMAIL_PORT= 587
+# EMAIL_USE_TLS = True
+#
+# CONTACT_EMAIL = 'ptribino@gmail.com'
 
 #Auth
 LOGIN_URL = 'accounts:login'
