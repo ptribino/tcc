@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'itens',
     'armario',
     'accounts',
-    'watson_app',
+   # 'watson_app',
 ]
 APIKEY = 'd44da73a-4abb-4cd0-9ab1-803488fdec1f'
 

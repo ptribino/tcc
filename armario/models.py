@@ -1,4 +1,5 @@
 from django.db import models
+#from .models import Itens
 
 class ArmarioManager(models.Manager):
 
@@ -12,12 +13,11 @@ objects = ArmarioManager()
 
 class Armario(models.Model):
 
-    name= models.CharField(max_length=50, blank=False)
+    name= models.CharField('Nome',max_length=50, blank=False)
     slug = models.SlugField('Atalho')
-    descricao = models.CharField(max_length=100, blank=True)
-    #start_date = models.DateField( 'Data de Início', null=True, blank=True)
-    created_at = models.DateField('Criado em', auto_now_add=False)
-    #updated_at = models.DateField('Atualizado em',auto_now=False)
+    descricao = models.CharField('Descrição',max_length=100, blank=True)
+    created_at = models.DateField('Criado em', auto_now_add=True)
+    updated_at = models.DateField('Atualizado em',auto_now=True)
 
 
     def __str__(self):

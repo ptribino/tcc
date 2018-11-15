@@ -1,7 +1,5 @@
 from django.db import models
 
-
-# Create your models here.
 class Categoria(models.Model):
     name_categoria = models.CharField(max_length=100, null=True)
 
@@ -26,10 +24,10 @@ class Itens(models.Model):
 
     name = models.CharField('Nome:', max_length=100)
     slug = models.SlugField('Atalho:')
-    categoria = models.ForeignKey('Categoria',on_delete=models.CASCADE)
+    categoria = models.ForeignKey('Categoria', related_name='itens', on_delete=models.CASCADE)
     cor = models.ForeignKey('Cor', on_delete=models.CASCADE)
     image = models.ImageField(
-        upload_to='', verbose_name='Imagem:', null=True, blank=True
+        upload_to='itens_imagens', verbose_name='Imagem:', null=True, blank=True
     )
 
     objects = ItenManager()

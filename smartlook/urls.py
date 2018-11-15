@@ -11,7 +11,7 @@ urlpatterns = [
     #path('estilo', include('estilo.urls', namespace='estilo')),
     path('conta', include('accounts.urls', namespace='accounts')),
     path('admin/', admin.site.urls),
-    path('watson/', include('watson_app.urls', namespace='comment')),
+    #path('watson/', include('watson_app.urls', namespace='comment')),
 
 ]
 

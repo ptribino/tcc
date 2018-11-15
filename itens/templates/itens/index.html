@@ -23,7 +23,7 @@
                     <a href="{{ itens.get_absolute_url }}">
                     {% if itens.image %}
                     <!-- <div id="makeMeDraggable" class="ui-draggable" style="position: relative; left: 560px; top: -1px;"> </div>-->
-                        <img src="{{ itens.image.url }}" alt="{{ itens.name }}" draggable=true />
+                        <img src="{{ itens.image.url }}" alt="{{ itens.name }}"/>
                     {% else %}
                         <img src="{% static 'img/logo.png' %}" alt="{{ itens.name }}" />
                     {% endif %}
@@ -32,9 +32,18 @@
             </div>
         <div class="pure-u-2-3">
             <div class="1-box">
-                <h4 class="content-subhead"><a href="{{ itens.get_absolute_url }}" title="">{{ itens.categoria }}</a></h4>
+               <h4 class="content-subhead"><a href="{{ itens.get_absolute_url }}" title="">{{ itens.categoria }}</a></h4>
                 {{ itens.cor|linebreaks }}
+              <!--  <li>{{ itens.name }}</li>-->
             </div>
+
+            <p> Categoria {{ categoria.name_categoria }} :<p>
+<ul>
+  {% for itens in categoria.itens %}
+    <li>{{ itens.name }}</li> <a href="{% url "nome_da_url_da_categoria" item.categoria.id %}">{{ item.categoria }}</a>
+  {% endfor %}
+</ul>
+
         </div>
         </div>
 
