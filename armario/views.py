@@ -16,7 +16,7 @@ class ArmarioListView(ListView):
 @login_required
 
 
-def armarioList(request):
+def lista(request):
     template_name = 'armario/lista.html'
     return render(request, template_name)
 

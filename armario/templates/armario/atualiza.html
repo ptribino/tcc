@@ -4,10 +4,48 @@
 
 {% block content %}
 
+<div class="pure-g-r content-ribbon">
+  <div class="pure-u-1">
+    <div class="l-box">
+      <div class="card">
+        <h4 class="content-subhead">Atualizar o Armário <u>{{ armario.name }}: </u></h4>
+
+            <form class="pure-form pure-form-stacked" method="post">
+                  {% csrf_token %}
+
+                   <!--Nome-->
+                <fieldset>
+                    {% for field in form %}
+                   <div class="pure-control-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.errors %}
+                         <ul class="errorlist">
+                        {% for error in field.errors %}
+                        <li>{{ error }}</li>
+                        {% endfor %}
+                       <span class="input-group-text">Nome:</span>
+                       <span class="input-group-text">Descrição:</span>
+
+                         </ul>
+                         {% endif %}
+                   </div>
+                       {% endfor %}
+
+                    <div class="text-right">
+                        <a href="{% url 'armario:lista_armarios' %}" class="pure-button primary-button">
+                            Cancelar
+                        </a>
+
+                    <button type="submit" class="pure-button pure-button-primary">Atualizar</button>
+
+                  </fieldset>
+                  </div>
+              </div>
 
 
-<atualiza>
-
-
-
+     </div>
+    </div>
+  </div>
+</div>
 {% endblock %}

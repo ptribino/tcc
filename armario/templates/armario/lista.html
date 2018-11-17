@@ -11,14 +11,10 @@
     <div class="l-box">
       <div class="card">
           <h4 class="content-subhead">Armários Cadastrados</h4>
-
           {% if armario|length > 0 %}
-
             <p>
-
             </p>
             <table id="customers">
-
               <tr>
                 <th >Nome</th>
                 <th class="th-sm">Descrição</th>
@@ -39,6 +35,7 @@
                     <a href="{% url 'armario:deleta_armario' pk=armario.id %}"
                       class="pure-button primary-button">Excluir</a>
 
+
                   </td>
                 </tr>
               {% endfor %}
@@ -46,7 +43,6 @@
         {% else %}
 
           <div class="content-subhead"></div> <br>
-
           <p class="content"> <b>Nenhum Armário cadastrado.</b></p>
           <p class="content">Crie já o seu!! Se precisar de ajuda, fale com a <a href= "#">Stella!</a> </p>
 
@@ -56,6 +52,7 @@
           <div class="text-right">
             <a href="{% url 'armario:armario_cadastrar' %}" class="pure-button primary-button">Criar</a>
            <br>
+
           </div>
         </div>
       </div>
