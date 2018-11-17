@@ -12,16 +12,18 @@ class ArmarioManager(models.Manager):
 
 objects = ArmarioManager()
 
-class Armario(models.Model):
 
-    name= models.CharField('Nome',max_length=50, blank=False)
+class Armario(models.Model):
+    name = models.CharField('Nome', max_length=50, blank=False)
     slug = models.SlugField('Atalho')
-    descricao = models.CharField('Descrição',max_length=100, blank=True)
+    descricao = models.CharField('Descrição', max_length=100, blank=True)
     created_at = models.DateField('Criado em', auto_now_add=True)
-    updated_at = models.DateField('Atualizado em',auto_now=True)
-    user_id = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
+    updated_at = models.DateField('Atualizado em', auto_now=True)
+    user = models.ForeignKey(User, blank=False, null=True, on_delete=models.CASCADE)
+
 
     objetos = models.Manager()
+
     def __str__(self):
         return self.name
 

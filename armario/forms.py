@@ -1,31 +1,16 @@
-from .models import Armario
 from django import forms
+from .models import Armario
+
 
 
 class InsereArmarioForm(forms.ModelForm):
-    name = forms.CharField(
-        label='Nome armário',
-        required=True,
-    )
 
-    descricao = forms.CharField(
-        label='Descrição',
-        required=False,
-        widget=forms.Textarea
-    )
+    class Meta:
+        # Modelo base
+        model = Armario
 
-    created_at = forms.DateField(
-        label='Criado em',
-        required=False,
-        widget=forms.DateField
-    )
-
-
-class Meta:
-    model = Armario
-
-    fields = [
-        'nome',
-        'descricao',
-        'created_at',
-    ]
+        # Campos que estarão no form
+        fields = [
+            'name',
+            'descricao'
+        ]
