@@ -16,11 +16,9 @@
     </div>
     <div class="pure-u-1-3">
         <div class="pure-menu pure-menu-open">
-            <a class="pure-menu-heading">Meus Armários</a>
+            <a class="pure-menu-heading" href="{% url 'armario:lista_armarios' %}"> Meus Armários</a>
             <ul>
 
-                <li><a href="#">Primavera</a></li>
-                <li><a href="#">Inverno</a></li>
                 <li class="pure-menu-heading">Minha Conta</li>
                 <li><a href="{% url 'accounts:edit' %}">Editar Conta</a></li>
                 <li><a href="{% url 'accounts:edit_password' %}">Editar Senha</a> </li>

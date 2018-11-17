@@ -13,8 +13,9 @@
           <h4 class="content-subhead">Armários Cadastrados</h4>
 
           {% if armario|length > 0 %}
+
             <p>
-             <br>
+
             </p>
             <table id="customers">
 
@@ -25,13 +26,12 @@
                 <th class="th-sm">Ações</th>
               </tr>
 
-
-
               {% for armario in armario %}
+
                 <tr>
                   <td> {{ armario.name}}</td>
                   <td> {{ armario.descricao }}</td>
-                  <td>{{ armario.created_at }}</td>
+                  <td> {{ armario.created_at }}</td>
                   <td>
                     <a href="{% url 'armario:atualiza_armarios' pk=armario.id %}"
                        class="pure-button primary-button">Atualizar </a>
@@ -43,10 +43,13 @@
                 </tr>
               {% endfor %}
             </table>
-
         {% else %}
-          <div class="text-center mt-5 mb-5 jumbotron">
-            <h5>Nenhum <code>Armário</code> cadastrado ainda.</h5>
+
+          <div class="content-subhead"></div> <br>
+
+          <p class="content"> <b>Nenhum Armário cadastrado.</b></p>
+          <p class="content">Crie já o seu!! Se precisar de ajuda, fale com a <a href= "#">Stella!</a> </p>
+
           </div>
         {% endif %}
           <hr />

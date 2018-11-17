@@ -1,3 +1,5 @@
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Armario
@@ -9,6 +11,14 @@ class ArmarioListView(ListView):
     model = Armario
     fields = '__all__'
     context_object_name = "armario"
+
+
+@login_required
+
+
+def armarioList(request):
+    template_name = 'armario/lista.html'
+    return render(request, template_name)
 
 
 class ArmarioCreateView(CreateView):

@@ -20,8 +20,9 @@
             <a class="pure-menu-heading" href="{% url 'core:home'%}">SMARTLOOK</a>
             <ul>
                 <li class="pure-menu-selected"><a href="{% url 'core:home' %}">Início</a></li>
-                <li><a href="{% url 'core:home' %}">Estilo</a></li>
+                {% if user.is_authenticated %}
                 <li><a href="{% url 'itens:index' %}">Itens/Looks</a></li>
+                 {% endif %}
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'armario:lista_armarios' %}">Armário</a></li>
                 {% endif %}

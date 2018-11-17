@@ -8,7 +8,7 @@ urlpatterns = [
     # path('', IndexTemplateView.as_view(), name="index"),
 
     # GET /armario/cadastrar
-    path('armario/cadastrar/', ArmarioCreateView.as_view(), {'template_name': 'armario/cadastra.html'}, name="armario_cadastrar"),
+    path('armario/cadastrar/', ArmarioCreateView.as_view(), name="armario_cadastrar"),
 
     # GET /armario
     path('armarios/', ArmarioListView.as_view(), name="lista_armarios"),
