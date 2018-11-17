@@ -1,9 +1,13 @@
 {% load static %}
+{% load staticfiles %}
 
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block extrahead %}
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}"/>
+    {% endblock %}
     <meta name="description" content="SmartLook - O sistema que te ajuda a montar o seu guarda-roupa cápsula!!" />
     <title>SmartLook</title>
     <link rel="stylesheet" href="{% static 'css/pure-min.css' %}">
@@ -19,7 +23,7 @@
                 <li><a href="{% url 'core:home' %}">Estilo</a></li>
                 <li><a href="{% url 'itens:index' %}">Itens/Looks</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'armario:armarionew' %}">Armário</a></li>
+                <li><a href="{% url 'armario:lista_armarios' %}">Armário</a></li>
                 {% endif %}
                 <li><a href="{% url 'core:contact' %}">Contato</a></li>
                 {% if user.is_authenticated %}
@@ -36,8 +40,9 @@
     {% block content %}{% endblock %}
     <div class="footer">
         SmartLook - Crie o seu Guarda-Roupa Cápsula!! by Priscila Tribino
+        </div>
     </div>
 </div>
-<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
+<script src="{% static 'css/pure-min.css' %}"></script>
 </body>
 </html>

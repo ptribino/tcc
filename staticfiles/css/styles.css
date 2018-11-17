@@ -7,11 +7,8 @@ body {
     margin: 0 auto;
     line-height: 1.7em;
 }
-a {
-    color: #3b8bba;
-}
 .content {
-    padding-top: 2em;
+    padding-top: 1em;
 }
 .l-box {
     padding: 1em;
@@ -70,7 +67,7 @@ a {
     color: #AECFE5;
 }
 body .primary-button {
-    background: #02a6eb;
+    background: ##2d3e50;
     color: #fff;
 }
 .splash {
@@ -100,7 +97,8 @@ body .primary-button {
     display: inline-block;
 }
 .content .content-ribbon {
-    margin: 1.5em 3em;
+    margin: 3em;
+    border-bottom: 1px solid #eee;
 }
 .ribbon {
     background: #eee;
@@ -113,7 +111,7 @@ body .primary-button {
     font-weight: normal;
 }
 .footer {
-    background: #2d3e50;
+    background: #2e2d50;
     color: #fff;
     text-align: center;
     padding: 1em;
@@ -139,7 +137,7 @@ form.pure-form-aligned ul.errorlist li {
     font-weight: bold;
     font-size: 100%;
 }
-.pure-form input[type], .pure-form textarea, .pure-form  select {
+.pure-form input[type], textarea, select {
     border: 2px solid #ddd;
     box-shadow: none;
     font-size: 100%;
@@ -154,7 +152,7 @@ form.pure-form-aligned ul.errorlist li {
     margin-bottom: 1em;
 }
 .pure-button {
-    background-color: #1f8dd6;
+    background-color: #778899;
     color: white;
     padding: 0.5em 2em;
     border-radius: 5px;
@@ -162,23 +160,29 @@ form.pure-form-aligned ul.errorlist li {
 
 a.pure-button-primary {
     background: white;
-    color: #000080;
+    color: #6A5ACD;
     border-radius: 5px;
     font-size: 120%;
 }
-.inner {
-    padding: 0em 1em;
+customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
-.inner p {
-    margin-top: 0;
+
+customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
-ul.breadcrumb {
-    padding: 0;
-}
-ul.breadcrumb li {
-    display: inline-block;
-}
-ul.breadcrumb li a {
-    display: inline-block;
-    padding: 0.3em 0.7em;
+
+customers tr:nth-child(even){background-color: #f2f2f2;}
+
+customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2d3e50;
+    color: white;
 }

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+        <div class="pure-g-r content-ribbon">
+
+            <div class="pure-u-1">
+                <div class="l-box">
+                    <h4 class="content-subhead">Hora de cadastrar o seu armário!!</h4>
+                </div>
+            </div>
+        </div>
+    <div class="pure-form pure-form-aligned" method="post">
+        {% csrf_token %}
+
+       <!-- Nome -->
+        <div class="content-subhead">Nome:</div>
+        { % render_field form.nome class+="form-control" % }
+
+       <!-- Descrição -->
+        <div class="content-subhead">Descrição:</div>
+         { % render_field form.descricao class+="form-control" % }
+
+
+    </div>
+
+   {% for armario in armario %}
+        <div class="pure-g-r content-ribbon">
+            <div class="pure-u-1-3">
+                <div class="l-box">
+                    <a href="{{ armario.get_absolute_url }}">
+                    {% if armario.image %}
+                        <img src="{{ itens.image.url }}" alt="{{ itens.name }}" />
+                    {% else %}
+                        <img src="{% static 'img/armario-cap-inverno.jpg' %}" alt="{{ armario.name }}" />
+                    {% endif %}
+                    </a>
+                </div>
+            </div>
+        <div class="pure-u-2-3">
+            <div class="1-box">
+                <h4 class="content-subhead"><a href="{{ itens.get_absolute_url }}" title="">{{ armario.name }}</a></h4>
+                {{ armario.descricao|linebreaks }}
+                Criado em: {{ armario.created_at|linebreaks }}
+            </div>
+        </div>
+        </div>
+
+    {% empty %}
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div clas="1-box">
+            <p>Não existe nenhum armário-cápsula cadastrado. </p>
+        </div>
+    </div>
+    </div>
+{% endfor %}
+{% endblock %}

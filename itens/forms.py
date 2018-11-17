@@ -12,6 +12,7 @@ class ContactItens(forms.Form):
         label='Mensagem/Dúvida', widget=forms.Textarea
     )
 
+#FIXME: ajustar para enviar o email ou retirar
 #    def send_mail(self):
 #        subject = 'Contato sobre o Smartlook'
 #        context = {

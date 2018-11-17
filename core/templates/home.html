@@ -6,12 +6,12 @@
             <div class="pure-u-1">
                 <div class="l-box splash-text">
                     <h1 class="splash-head">
-                        SmartLook - Aprenda a criar o seu  Armário-Cápsula e conheça o seu estilo!
+                        SmartLook - Crie o seu  Armário-Cápsula!
                     </h1>
                     <p>
                         {% if user.is_authenticated %}
-                        <h1 class="splash-subhead">
-                            Oi, {{ user }}!! </h1>
+                        <h2 class="splash-subhead">
+                            <h2><a href="{% url 'accounts:dashboard' %}"> Olá {{ user }}!! </a></h2>
                         {% else %}
                         <a href="{% url 'accounts:register' %}" class="pure-button primary-button">Cadastre-se</a>
                         {% endif %}

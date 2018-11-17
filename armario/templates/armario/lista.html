@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="pure-g-r content-ribbon">
+  <div class="pure-u-1">
+    <div class="l-box">
+      <div class="card">
+          <h4 class="content-subhead">Armários Cadastrados</h4>
+
+          {% if armario|length > 0 %}
+            <p>
+             <br>
+            </p>
+            <table id="customers">
+
+              <tr>
+                <th >Nome</th>
+                <th class="th-sm">Descrição</th>
+                <th class="th-sm">Criado em</th>
+                <th class="th-sm">Ações</th>
+              </tr>
+
+
+
+              {% for armario in armario %}
+                <tr>
+                  <td> {{ armario.name}}</td>
+                  <td> {{ armario.descricao }}</td>
+                  <td>{{ armario.created_at }}</td>
+                  <td>
+                    <a href="{% url 'armario:atualiza_armarios' pk=armario.id %}"
+                       class="pure-button primary-button">Atualizar </a>
+
+                    <a href="{% url 'armario:deleta_armario' pk=armario.id %}"
+                      class="pure-button primary-button">Excluir</a>
+
+                  </td>
+                </tr>
+              {% endfor %}
+            </table>
+
+        {% else %}
+          <div class="text-center mt-5 mb-5 jumbotron">
+            <h5>Nenhum <code>Armário</code> cadastrado ainda.</h5>
+          </div>
+        {% endif %}
+          <hr />
+          <div class="text-right">
+            <a href="{% url 'armario:armario_cadastrar' %}" class="pure-button primary-button">Criar</a>
+           <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.db import models
-#from .models import Itens
+from django.contrib.auth.models import User
+
 
 class ArmarioManager(models.Manager):
 
@@ -18,12 +19,21 @@ class Armario(models.Model):
     descricao = models.CharField('Descrição',max_length=100, blank=True)
     created_at = models.DateField('Criado em', auto_now_add=True)
     updated_at = models.DateField('Atualizado em',auto_now=True)
+    user_id = models.ForeignKey('auth.User', blank=False, on_delete=models.CASCADE)
 
-
+    objetos = models.Manager()
     def __str__(self):
         return self.name
+
+class ArmarioItem(models.Model):
+
+    armario = models.ForeignKey('armario.Armario', blank=False, on_delete=models.CASCADE)
+    itens = models.ForeignKey('itens.Itens', blank=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Meta
 
     class Meta:
         verbose_name = 'Armário'
         verbose_name_plural = 'Armários'
-        ordering = ['name']
+       # ordering = ['name']

@@ -3,6 +3,6 @@
 #
 # app_name='watson_app'
 # urlpatterns = [
-#     re_path(r'^watson/', views.CommentView, name='Comment'),
-#     path('watson_app/', views.form_valid, name='comment'),
+#     re_path(r'^watson/', views.CommentView, name='comment'),
+#     #path('watson_app/', views.form_valid, name='comment'),
 # ]

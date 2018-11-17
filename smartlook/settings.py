@@ -33,6 +33,8 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['smartloook.herokuapp.com', '127.0.0.1']
 
+INTERNAL_IPS = ['127.0.0.1']
+
 
 # Application definition
 
@@ -50,9 +52,8 @@ INSTALLED_APPS = [
     'itens',
     'armario',
     'accounts',
-   # 'watson_app',
+    'watson_app',
 ]
-APIKEY = 'd44da73a-4abb-4cd0-9ab1-803488fdec1f'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,7 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'smartlook.urls'
@@ -150,6 +151,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+#FIXME: Verificar se será utilizado
 # E-mails
 # EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
 # #EMAIL_BACKEND = 'django.core.email.backends.console.EmailBackend'
