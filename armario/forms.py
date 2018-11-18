@@ -2,8 +2,16 @@ from django import forms
 from .models import Armario
 
 
-
 class InsereArmarioForm(forms.ModelForm):
+
+    # def __init__(self, *args, **kwargs):
+    #     self.user = kwargs.pop('user')
+    #     super(InsereArmarioForm, self).__init__(*args, **kwargs)
+
+    # def save(self, commit=True):
+    #     instance = super(InsereArmarioForm, self).save(commit=False)
+    #     instance.user = self.user
+    #     return super(InsereArmarioForm, self).save(commit=commit)
 
     class Meta:
         # Modelo base
@@ -13,4 +21,9 @@ class InsereArmarioForm(forms.ModelForm):
         fields = [
             'name',
             'descricao'
+        ]
+
+        exclude = [
+            'created_at,'
+            'user'
         ]

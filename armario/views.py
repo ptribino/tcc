@@ -20,6 +20,14 @@ def lista(request):
     template_name = 'armario/lista.html'
     return render(request, template_name)
 
+def get_object(self, queryset=None):
+    armario = None
+    id = self.kwargs.get(self.pk_url_kwarg)
+    user_id = self.kwargs.get(self.pk_url_kwarg)
+
+    armario = Armario.objects.filter(user_id=user_id).first()
+
+    return armario
 
 class ArmarioCreateView(CreateView):
     template_name = "armario/cadastra.html"
@@ -31,18 +39,20 @@ class ArmarioCreateView(CreateView):
         form_class.instance.user = self.request.user
         return super().form_valid(form_class)
 
-    def new_armario(request):
+    def new_armario(request, armario_id):
+        newarmario = Armario.objects.get(id=armario_id)
+        user = request.user.id
         if request.method == "POST":
-            form = InsereArmarioForm(request.POST)
+            form = InsereArmarioForm(data=request.POST,user=request.user, instance=newarmario)
             if form.is_valid():
                 newarmario = form.save(commit=False)
-                newarmario.user = request.user
+                newarmario.name = request.name
                 newarmario.descricao = request.descricao
                 newarmario.created_at = timezone.now()
                 newarmario.save()
                 return redirect('armario:lista_armarios', pk=newarmario.pk)
         else:
-            form = InsereArmarioForm()
+            form = InsereArmarioForm(user=request.user, instance=newarmario)
         return render(request, 'armario/atualiza.html', {'form': form})
 
 class ArmarioUpdateView(UpdateView):
