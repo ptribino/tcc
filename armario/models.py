@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+#from .models import Itens
 
 
 class ArmarioManager(models.Manager):
@@ -21,21 +22,21 @@ class Armario(models.Model):
     updated_at = models.DateField('Atualizado em', auto_now=True)
     user = models.ForeignKey(User, blank=False, on_delete=models.PROTECT, related_name='user')
 
-
     objetos = models.Manager()
 
     def __str__(self):
         return self.name
 
-class ArmarioItem(models.Model):
-
-    armario = models.ForeignKey('armario.Armario', blank=False, on_delete=models.CASCADE)
-    itens = models.ForeignKey('itens.Itens', blank=False, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.Meta
-
     class Meta:
         verbose_name = 'Armário'
         verbose_name_plural = 'Armários'
-       # ordering = ['name']
+        ordering = ['name']
+
+class ArmarioItem(models.Model):
+
+    armario = models.ForeignKey(Armario, blank=False, on_delete=models.CASCADE)
+    itens = models.ForeignKey('itens.Itens', blank=False, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.armario.name + '_' + self.itens.name
+
