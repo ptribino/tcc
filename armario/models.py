@@ -30,7 +30,7 @@ class Armario(models.Model):
     class Meta:
         verbose_name = 'Armário'
         verbose_name_plural = 'Armários'
-        ordering = ['name']
+       # ordering = ['name']
 
 class ArmarioItem(models.Model):
 

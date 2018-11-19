@@ -11,6 +11,7 @@ urlpatterns = [
     path('armario/', include('armario.urls', namespace='armario')),
     #path('estilo', include('estilo.urls', namespace='estilo')),
     path('conta', include('accounts.urls', namespace='accounts')),
+    path('stella/', include('watson_app.urls', namespace='watson_app')),
     path('admin/', admin.site.urls),
 ]
 

@@ -1,5 +1,8 @@
 from django.urls import path
-from .views import ArmarioCreateView, ArmarioListView, ArmarioUpdateView, ArmarioDeleteView
+from .views import ArmarioCreateView
+from .views import ArmarioListView
+from .views import ArmarioUpdateView
+from .views import ArmarioDeleteView
 
 app_name = 'armario'
 

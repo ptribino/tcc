@@ -15,7 +15,7 @@ class ArmarioAdmin(admin.ModelAdmin):
 
 class ArmarioItemAdmin(admin.ModelAdmin):
 
-    list_display = ['armario.name', 'itens.name']
+    list_display = ['armario.name', 'itens.name', 'itens.image']
 
 admin.site.register(Armario, ArmarioAdmin)
 admin.site.register(ArmarioItem)

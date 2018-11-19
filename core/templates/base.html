@@ -26,6 +26,9 @@
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'armario:lista_armarios' %}">Armário</a></li>
                 {% endif %}
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'watson_app:chat' %}">Stella</a></li>
+                {% endif %}
                 <li><a href="{% url 'core:contact' %}">Contato</a></li>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>
@@ -36,6 +39,7 @@
                 {% endif %}
             </ul>
         </div>
+
     </div>
     <div class="content">
     {% block content %}{% endblock %}

@@ -1,8 +1,11 @@
-# from django.urls import include, path, re_path
-# from . import views
-#
-# app_name='watson_app'
-# urlpatterns = [
-#     re_path(r'^watson/', views.CommentView, name='comment'),
-#     #path('watson_app/', views.form_valid, name='comment'),
-# ]
+from django.urls import  path
+from . import views
+
+app_name='watson_app'
+
+urlpatterns = [
+    path('watson/', views.ChatView, name='chat'),
+    #path('watson_app/', views.form_valid, name='comment'),
+]
+
+

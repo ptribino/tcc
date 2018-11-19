@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="pure-g-r content-ribbon">
+  <div class="pure-u-1">
+    <div class="l-box">
+      <div class="card">
+           {% if user.is_authenticated %}
+          <h4 class="content-subhead">Oi <u>{{ user }}!! Vamos conversar? </u></h4>
+          {% else %}
+          <p class="content"> Eu sou a Stella, sua assistente virtual para lhe auxiliar
+              a entender o conceito do armário cápsula e estou pronta para te dar dicas de looks, brechós e
+              lojas que prezam o consumo sustentável!
+          </p>
+
+
+
+          <script type="text/javascript" src="/scripts/util.js"></script>
+	      <script type="text/javascript" src="/scripts/index.js"></script>
+
+          </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

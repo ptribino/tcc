@@ -1,9 +1,9 @@
 from django import forms
 from .models import Armario
+#from .models import ArmarioItem
 
 
 class InsereArmarioForm(forms.ModelForm):
-
     # def __init__(self, *args, **kwargs):
     #     self.user = kwargs.pop('user')
     #     super(InsereArmarioForm, self).__init__(*args, **kwargs)
@@ -27,3 +27,10 @@ class InsereArmarioForm(forms.ModelForm):
             'created_at,'
             'user'
         ]
+
+
+# class ArmarioItemForm(forms.ModelForm):
+#     class Meta:
+#         model = ArmarioItem
+#
+# fields = "__all__"

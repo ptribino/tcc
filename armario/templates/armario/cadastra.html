@@ -38,6 +38,9 @@
                     </div>
                          {% endfor %}
                    </div>
+
+                      <input type="hidden"  value="{{armario_obj.id}}" name="armario_id">
+
                       <div class="text-right">
                         <a href="{% url 'armario:lista_armarios' %}" class="pure-button primary-button">
                             Cancelar
@@ -46,6 +49,33 @@
                     <button type="submit" class="pure-button pure-button-primary">Cadastrar</button>
 
       </fieldset>
+                          <p></p>
+                          <table id="customers">
+              <tr>
+                <th >Nome</th>
+                <th class="th-sm">Categoria</th>
+                <th class="th-sm">Cor</th>
+                <th class="th-sm">Imagem</th>
+              </tr>
+
+              {% for itens in itens %}
+
+                <tr>
+                  <td> {{ itens.name}}</td>
+                  <td> {{ itens.cor }}</td>
+                  <td> {{ itens.categoria }}</td>
+                  <td> {{ itens.imagem }}</td>
+                  <td>
+                    <a href="#"
+                       class="pure-button primary-button">Incluir </a>
+
+                    <a href="{% url 'armario:lista_armario' pk=armario.id %}"
+                      class="pure-button primary-button">Voltar</a>
+                   </td>
+                </tr>
+              {% endfor %}
+            </table>
+
            </div>
         </div>
     </div>
