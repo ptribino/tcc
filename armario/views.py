@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Armario
+#from tcc.itens.models import Itens
 from .forms import InsereArmarioForm
 
 class ArmarioListView(ListView):
@@ -52,6 +53,8 @@ class ArmarioCreateView(CreateView):
         else:
             form = InsereArmarioForm(user=request.user, instance=newarmario)
         return render(request, 'armario/atualiza.html', {'form': form})
+
+
 
     # def post(self, request):
     #     data={}

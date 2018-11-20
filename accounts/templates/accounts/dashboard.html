@@ -2,15 +2,15 @@
 
 {% block content %}
 <div class="pure-g-r content-ribbon">
-    {% if messages %}
+    <!--{% if messages %}-->
     <div class="pure-u-1">
-        {% for message in messages %}
-        <p>{{ message }}</p>
-        {% endfor %}
-        {% endif %}
+        <!--{% for message in messages %}-->
+        <!--<p>{{ message }}</p>-->
+        <!--{% endfor %}-->
+        <!--{% endif %}-->
         <ul class="breadcrumb">
         {% block breadcrumb %}
-            <li><a href="{% url 'accounts:dashboard' %}">Meu Painel</a>/</li>
+            <li><a href="{% url 'accounts:dashboard' %}">Meu Painel</a></li>
             {% endblock %}
         </ul>
     </div>

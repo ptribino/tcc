@@ -31,6 +31,30 @@
                          {% endif %}
                    </div>
                          {% endfor %}
+                    <p></p>
+
+                    <div style="overflow-x:auto;">
+            <table id="customers">
+              <tr>
+
+                <th class="th-sm">Item</th>
+                <th class="th-sm">Categoria</th>
+                <th class="th-sm">Cor</th>
+                <th class="th-sm">Imagem</th>
+              </tr>
+                       {% for itens in itens %}
+
+                        <tr>
+                            <td> {{ itens.name}}</td>
+                            <td> {{ itens.categoria }}</td>
+                            <td> {{ itens.cor }}</td>
+                            <td> {{ itens.image.url }}</td>
+
+                        </tr>
+                        {% endfor%}
+            </table>
+                    <p></p>
+                    </div>
 
                     <div class="text-right">
                         <a href="{% url 'armario:lista_armarios' %}" class="pure-button primary-button">
