@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.utils import timezone
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from .models import Armario
-#from tcc.itens.models import Itens
+#from .models import Itens
 from .forms import InsereArmarioForm
 
 class ArmarioListView(ListView):
@@ -55,32 +55,24 @@ class ArmarioCreateView(CreateView):
         return render(request, 'armario/atualiza.html', {'form': form})
 
 
-
-    # def post(self, request):
-    #     data={}
-    #     data['name'] = request.POST['name']
-    #     data['descricao'] = request.POST['descricao']
-    #     data['armario_id'] = request.POST['armario_id']
-    #
-    #
-    #     if data['armario_id']:
-    #         armario = Armario.objects.get(id=data['armario_id'])
-    #         armario.name = data['name']
-    #         armario.descricao = data['descricao']
-    #         armario.save()
-    #     else:
-    #         armario = Armario.objects.create(
-    #             name=data['name'], descricao=data['descricao']
-    #         )
-
-    #     itens = armario.armarioitem.set.all()
-    #     data['armario'] = armario
-    #     data['itens'] = itens
-    #     return render(
-    #         request, 'armario/lista.html', data
-    #     )
-
-
+#     # LISTA ITENS CADASTRADOS
+# class ListaItensView(ListView):
+#     template_name = "itens/lista_itens.html"
+#     model = Itens
+#     fields = '__all__'
+#     context_object_name = "itens"
+#
+# @login_required
+# def lista(request):
+#     template_name = 'itens/lista_itens.html'
+#     return render(request, template_name)
+#
+#
+# def get_object(self, queryset=None):
+#     itens = None
+#     id = self.kwargs.get(self.pk_url_kwarg)
+#     user_id = self.kwargs.get(self.pk_url_kwarg)
+#     itens = Itens.objects.all()
 
 class ArmarioUpdateView(UpdateView):
     template_name = "armario/atualiza.html"

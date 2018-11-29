@@ -21,7 +21,7 @@
             <ul>
                 <li class="pure-menu-selected"><a href="{% url 'core:home' %}">Início</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'itens:index' %}">Itens/Looks</a></li>
+                <li><a href="{% url 'itens:lista_itens' %}">Itens/Looks</a></li>
                  {% endif %}
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'armario:lista_armarios' %}">Armário</a></li>

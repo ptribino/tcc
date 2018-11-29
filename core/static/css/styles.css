@@ -174,16 +174,18 @@ a.pure-button-primary {
 #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: center;     /* alinhamento horizontal */
+    vertical-align: middle; /* alinhamento vertical */
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr:nth-child(even){background-color: white/*#f2f2f2*/;}
 
 #customers tr:hover {background-color: #ddd;}
 
 #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #A9A9A9;
     color: white;
 }

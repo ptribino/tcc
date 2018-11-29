@@ -16,8 +16,9 @@ class ItenManager(models.Manager):
 
     def search(self, query):
         return self.get_queryset().filter(
-            models.Q(name__icontains=query) | \
-            models.Q(cor__icontains=query)
+            models.Q(name__icontains=query)  | \
+            #models.Q(cor__icontains=query)  | \
+            models.Q(categoria__icontains=query)
         )
 
 class Itens(models.Model):

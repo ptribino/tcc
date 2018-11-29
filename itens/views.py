@@ -1,11 +1,19 @@
 from django.shortcuts import render, get_object_or_404
+from django.views import generic
 
 from .models import Itens
 from .forms import ContactItens
 
+# class ItensListView(generic.ListView):
+#
+#     model = Itens
+#     template_name = 'itens/index.html'
+#
+# itens_list = ItensListView.as_view()
+
 def index(request):
     itens = Itens.objects.all()
-    template_name = 'itens/index.html'
+    template_name = 'itens/lista_itens.html'
     context = {
         'itens': itens
     }

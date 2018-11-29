@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import User
 #from .models import Itens
 
@@ -20,8 +21,7 @@ class Armario(models.Model):
     descricao = models.CharField('Descrição', max_length=100, blank=True)
     created_at = models.DateField('Criado em', auto_now_add=True)
     updated_at = models.DateField('Atualizado em', auto_now=True)
-    user = models.ForeignKey(User, blank=False, on_delete=models.PROTECT, related_name='user')
-
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=False, on_delete=models.PROTECT, related_name='user')
     objetos = models.Manager()
 
     def __str__(self):
@@ -30,7 +30,7 @@ class Armario(models.Model):
     class Meta:
         verbose_name = 'Armário'
         verbose_name_plural = 'Armários'
-       # ordering = ['name']
+        ordering = ['name']
 
 class ArmarioItem(models.Model):
 

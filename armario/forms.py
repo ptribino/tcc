@@ -34,3 +34,4 @@ class InsereArmarioForm(forms.ModelForm):
 #         model = ArmarioItem
 #
 # fields = "__all__"
+

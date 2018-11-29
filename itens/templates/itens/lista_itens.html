@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <h4 class="content-subhead">O smartlook já vem com peças cadastradas!!</h4>
+            <p class="content">
+            <table id="customers">
+                <tr>
+                    <th>Nome</th>
+                    <th class="th-sm">Categoria</th>
+                    <th class="th-sm">Cor</th>
+                    <th class="th-sm">Imagem</th>
+                    <th class="th-sm">Ações</th>
+                </tr>
+
+                {% for itens in itens %}
+
+                <tr>
+                    <td> {{ itens.name}}</td>
+                    <td> {{ itens.categoria }}</td>
+                    <td> {{ itens.cor }}</td>
+                    <td><a href="{{ itens.get_absolute_url }}"><img src="{{ itens.image.url }}" alt="{{ itens.name }}"/></td>
+                    <td>
+                        <a href="#" class="pure-button primary-button">Incluir </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
